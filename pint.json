@@ -1,0 +1,7 @@
+{
+  "preset": "laravel",
+  "exclude": ["src/*", "config/*"],
+  "rules": {
+    "psr_autoloading": true
+  }
+}

@@ -1,0 +1,9 @@
+# Set default indentation to 4 spaces
+[*]
+indent_style = space
+indent_size = 4
+
+# Set indentation for composer.json to 2 spaces
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
