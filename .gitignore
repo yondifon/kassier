@@ -1,2 +1,12 @@
 vendor/
 composer.lock
+.phpunit.cache
+
+
+# Ignore all ide-helper files
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+
+
+.env
