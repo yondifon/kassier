@@ -73,7 +73,7 @@
     "ide-helper": [
       "vendor/bin/testbench ide-helper:generate",
       "vendor/bin/testbench ide-helper:meta",
-      "vendor/bin/testbench ide-helper:models -M --dir=\"src/\""
+      "vendor/bin/testbench ide-helper:models -N --dir=\"src/\""
     ]
   }
 }
