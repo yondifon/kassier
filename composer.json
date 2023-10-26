@@ -1,0 +1,79 @@
+{
+  "name": "malico/kassier",
+  "description": "Laravel cashier for one-time payment gateways",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "cashier",
+    "payment",
+    "gateways"
+  ],
+  "authors": [
+    {
+      "name": "ndifon",
+      "email": "hi@malico.me"
+    }
+  ],
+  "require": {
+    "laravel/framework": "*"
+  },
+  "require-dev": {
+    "barryvdh/laravel-ide-helper": "^2.13",
+    "laravel/pint": "^1.13",
+    "nunomaduro/collision": "^7.8",
+    "orchestra/testbench": "^8.13",
+    "phpunit/phpunit": "^10.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Malico\\Kassier\\": "src/",
+      "Malico\\Kassier\\Database\\Factories\\": "database/factories/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Malico\\Kassier\\Tests\\": "tests/",
+      "Workbench\\App\\": "workbench/app/",
+      "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+      "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Malico\\Kassier\\KassierServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@clear",
+      "@prepare"
+    ],
+    "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+    "prepare": "@php vendor/bin/testbench package:discover --ansi",
+    "build": "@php vendor/bin/testbench workbench:build --ansi",
+    "serve": [
+      "@build",
+      "@php vendor/bin/testbench serve"
+    ],
+    "lint": [
+      "@php vendor/bin/pint"
+    ],
+    "test": [
+      "@php vendor/bin/phpunit"
+    ],
+    "post-update-cmd": [
+      "@ide-helper"
+    ],
+    "ide-helper": [
+      "vendor/bin/testbench ide-helper:generate",
+      "vendor/bin/testbench ide-helper:meta",
+      "vendor/bin/testbench ide-helper:models -N --dir=\"src/\""
+    ]
+  }
+}
