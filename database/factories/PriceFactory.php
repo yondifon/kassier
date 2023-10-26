@@ -30,4 +30,15 @@ class PriceFactory extends Factory
             'period' => Period::month(),
         ];
     }
+
+    /**
+     * Mark the price as yearly.
+     */
+    public function yearly(): static
+    {
+        return $this->state([
+            'period' => Period::year(),
+            'price' => 9900 * 10,
+        ]);
+    }
 }
